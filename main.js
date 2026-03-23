@@ -26,7 +26,7 @@ const customAudioInput = document.getElementById("custom-audio");
 const customAudioLabel = document.querySelector(".custom-audio-label");
 
 // Default Alert Sound (Arpit Bala Scream)
-let currentAlertSound = "https://www.myinstants.com/media/sounds/scream-meme.mp3";
+let currentAlertSound = "uth_jaa(256k).mp3.mpeg";
 alertSound.src = currentAlertSound;
 
 // Custom Audio Handler
