@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Uber | Sleep Detector (Fullscreen)</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&family=Inter:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body class="dark-theme">
+    <div id="loading-overlay">
+        <div class="loader"></div>
+        <p>INITIALIZING AI SYSTEMS...</p>
+    </div>
+
+    <!-- Header overlayed on top -->
+    <header>
+        <div class="logo">
+            <span class="uber-text">Uber</span>
+            <span class="detector-badge">DRIVE SAFE</span>
+        </div>
+        <div class="status-indicator">
+            <div class="dot green"></div>
+            <span id="system-status">SYSTEM READY</span>
+        </div>
+    </header>
+
+    <main class="fullscreen-main">
+        <div class="camera-container-full">
+            <div id="cam-placeholder" class="placeholder-overlay">
+                <div class="cam-icon-circle"></div>
+                <p>CAMERA OFFLINE</p>
+                <span>Click 'Start Monitoring'</span>
+            </div>
+            
+            <video id="webcam" autoplay playsinline></video>
+            <canvas id="output_canvas"></canvas>
+            
+            <div id="alert-banner" class="hidden">
+                <h1 id="alert-text">SOGAYA KYA BKL?</h1>
+            </div>
+
+            <!-- Floating Glass Controls on the right -->
+            <div class="floating-controls">
+                <div class="glass-card readouts">
+                    <div id="ear-display">EAR: 0.00</div>
+                    <div id="state-display" class="state-good">EYES: OPEN</div>
+                </div>
+
+                <div class="glass-card attention-card">
+                    <span class="label">DRIVER ATTENTION</span>
+                    <div class="progress-bar">
+                        <div id="attention-level" class="fill" style="width: 100%"></div>
+                    </div>
+                </div>
+
+                <div class="glass-card action-card">
+                    <button id="start-btn" class="primary-btn">START MONITORING</button>
+                    <button id="test-alert-btn" class="secondary-btn">TEST ALARM</button>
+                    <div class="custom-audio-container">
+                        <label for="custom-audio" class="custom-audio-label">SELECT ALARM (MP3)</label>
+                        <input type="file" id="custom-audio" accept="audio/*">
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Targeting Brackets Overlay -->
+            <div class="cam-corners top-left"></div>
+            <div class="cam-corners top-right"></div>
+            <div class="cam-corners bottom-left"></div>
+            <div class="cam-corners bottom-right"></div>
+        </div>
+    </main>
+
+    <audio id="alert-sound" src=""></audio>
+
+    <script type="module" src="main.js"></script>
+</body>
+</html>
